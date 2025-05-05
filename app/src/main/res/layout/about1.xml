@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#E2E6E9"
+    tools:context=".About1">
+
+    <TextView
+        android:id="@+id/about_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="36dp"
+        android:text="Conocimientos"
+        android:textAlignment="center"
+        android:textColor="@color/black"
+        android:textSize="28dp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <LinearLayout
+        android:id="@+id/skills_container"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="16dp"
+        android:layout_marginTop="24dp"
+        app:layout_constraintTop_toBottomOf="@id/about_title">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Python"
+            android:textSize="20sp"
+            android:textColor="@color/black"
+            android:background="#FFFFFF"
+            android:padding="12dp"
+            android:layout_marginBottom="8dp"
+            android:elevation="4dp"
+            android:drawableEnd="@drawable/ic_code"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Java"
+            android:textSize="20sp"
+            android:textColor="@color/black"
+            android:background="#FFFFFF"
+            android:padding="12dp"
+            android:layout_marginBottom="8dp"
+            android:elevation="4dp"
+            android:drawableEnd="@drawable/ic_code"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="HTML"
+            android:textSize="20sp"
+            android:textColor="@color/black"
+            android:background="#FFFFFF"
+            android:padding="12dp"
+            android:layout_marginBottom="8dp"
+            android:elevation="4dp"
+            android:drawableEnd="@drawable/ic_code"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="CSS"
+            android:textSize="20sp"
+            android:textColor="@color/black"
+            android:background="#FFFFFF"
+            android:padding="12dp"
+            android:layout_marginBottom="8dp"
+            android:elevation="4dp"
+            android:drawableEnd="@drawable/ic_code"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="JavaScript"
+            android:textSize="20sp"
+            android:textColor="@color/black"
+            android:background="#FFFFFF"
+            android:padding="12dp"
+            android:layout_marginBottom="8dp"
+            android:elevation="4dp"
+            android:drawableEnd="@drawable/ic_code"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Android Studio"
+            android:textSize="20sp"
+            android:textColor="@color/black"
+            android:background="#FFFFFF"
+            android:padding="12dp"
+            android:layout_marginBottom="8dp"
+            android:elevation="4dp"
+            android:drawableEnd="@drawable/ic_code"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Angular"
+            android:textSize="20sp"
+            android:textColor="@color/black"
+            android:background="#FFFFFF"
+            android:padding="12dp"
+            android:layout_marginBottom="8dp"
+            android:elevation="4dp"
+            android:drawableEnd="@drawable/ic_code"/>
+
+    </LinearLayout>
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btn_back1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Regresar"
+        android:textSize="16sp"
+        android:layout_margin="16dp"
+        android:backgroundTint="@color/black"
+        android:textColor="@color/white"
+        app:cornerRadius="8dp"
+        app:icon="@drawable/ic_arrow_back"
+        app:iconGravity="start"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"/>
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btn_follow1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="16dp"
+        android:layout_marginBottom="16dp"
+        android:backgroundTint="@color/black"
+        android:text="Siguiente"
+        android:textColor="@color/white"
+        android:textSize="16sp"
+        app:cornerRadius="8dp"
+        app:iconGravity="start"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toEndOf="@+id/btn_back1" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
