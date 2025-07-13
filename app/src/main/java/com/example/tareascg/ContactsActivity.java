@@ -7,20 +7,28 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 import android.widget.Button;
 import java.util.ArrayList;
+import java.util.List;
 
 public class ContactsActivity extends AppCompatActivity {
     private RecyclerView recyclerView;
     private ContactoAdapter adapter;
-    private static ArrayList<Contacto> listaContactos = new ArrayList<>();
+    private ArrayList<Contacto> listaContactos = new ArrayList<>();
+    private ContactoManager contactoManager;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.contacts);
 
+        // Inicializar ContactoManager
+        contactoManager = ContactoManager.getInstance(this);
+
         recyclerView = findViewById(R.id.recyclerContactos);
         Button btnRegistrar = findViewById(R.id.btnRegistrar);
         Button btnRegresar = findViewById(R.id.btnRegresar);
+
+        // Cargar contactos desde la base de datos
+        cargarContactosDesdeDB();
 
         adapter = new ContactoAdapter(listaContactos);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
@@ -37,10 +45,14 @@ public class ContactsActivity extends AppCompatActivity {
     @Override
     protected void onResume() {
         super.onResume();
+        // Recargar contactos cuando se regrese de otra actividad
+        cargarContactosDesdeDB();
         adapter.actualizarLista(listaContactos);
     }
 
-    public static void agregarContacto(Contacto contacto) {
-        listaContactos.add(contacto);
+    private void cargarContactosDesdeDB() {
+        List<Contacto> contactosDB = contactoManager.getContactoDAO().obtenerTodosLosContactos();
+        listaContactos.clear();
+        listaContactos.addAll(contactosDB);
     }
 }
